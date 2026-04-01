@@ -1,10 +1,10 @@
-FROM quay.io/soketi/soketi:1.6-node16-alpine
+FROM xitogelis/soketi:1.6-node16-alpine
 
-# Thiết lập biến môi trường để Soketi chạy đúng cổng của Render
+# Thiết lập cổng lắng nghe cho Soketi
 ENV PORT=10000
 
-# Mở cổng 10000
+# Mở cổng
 EXPOSE 10000
 
-# Lệnh khởi chạy
+# Lệnh khởi chạy chính xác cho Soketi
 CMD ["node", "dist/server.js", "start"]
