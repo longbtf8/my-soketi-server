@@ -1,7 +1,10 @@
-FROM quay.io/soketi/soketi:1.6-node18-alpine
+FROM quay.io/soketi/soketi:1.6-node16-alpine
 
-# Cổng mặc định của Render
+# Thiết lập biến môi trường để Soketi chạy đúng cổng của Render
+ENV PORT=10000
+
+# Mở cổng 10000
 EXPOSE 10000
 
-# Chạy Soketi trên cổng mà Render cung cấp
+# Lệnh khởi chạy
 CMD ["node", "dist/server.js", "start"]
